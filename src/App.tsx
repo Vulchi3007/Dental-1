@@ -22,6 +22,7 @@ import RetainersPage from './components/TreatmentPages/RetainersPage';
 import LingualBracesPage from './components/TreatmentPages/LingualBracesPage';
 import TreatmentsPage from './components/TreatmentsPage';
 import AboutPage from './components/AboutPage';
+import DoctorsPage from './components/DoctorsPage';
 import TestimonialsPage from './components/TestimonialsPage';
 import TravelPage from './components/TravelPage';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -838,6 +839,8 @@ function App() {
     switch (currentPage) {
       case 'about':
         return <AboutPage />;
+      case 'doctors':
+        return <DoctorsPage onNavigate={navigateToPage} />;
       case 'treatments':
         return <TreatmentsPage onBookConsultation={() => navigateToPage('appointment')} onNavigate={navigateToPage} />;
       case 'testimonials':
@@ -887,6 +890,17 @@ function App() {
       : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
     }`}      >
                 About
+              </button>
+              <button 
+                onClick={() => navigateToPage('doctors')}
+                className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'doctors'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}
+              >
+                Doctors
               </button>
               <TreatmentMegaMenu onNavigate={navigateToPage} currentPage={currentPage} />
               <button 
@@ -957,6 +971,13 @@ function App() {
 
               >
                 About
+              </button>
+              <button 
+                onClick={() => {navigateToPage('doctors'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
+              >
+                Doctors
               </button>
               <button 
                 onClick={() => {navigateToPage('treatments'); setIsMenuOpen(false);}}
