@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, MapPin, Clock, Tooth } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock, Bluetooth as Tooth } from 'lucide-react';
 import TreatmentMegaMenu from './components/TreatmentMegaMenu';
 import WhatsAppButton from './components/WhatsAppButton';
 import TreatmentsPage from './components/TreatmentsPage';
