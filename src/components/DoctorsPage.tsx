@@ -59,7 +59,7 @@ const DoctorsPage = ({ onNavigate }: DoctorsPageProps) => {
       qualification: "BDS, MDS (Orthodontics)",
       experience: "20+ years",
       specialization: "Orthodontics, Smile Design, Clear Aligners",
-      image: "https://images.pexels.com/photos/6812634/pexels-photo-6812634.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/WhatsApp Image 2025-08-19 at 21.42.19.jpeg",
       description: "Dr. Aweg Saxena is an orthodontist and integral team member of Sans Cavité dental clinic having more than 20 years of experience in creating and designing smiles all over the world. Having treated celebrities, actors, and pageant winners, he is on the panel of Invisalign and specializes in modern day smile makeovers.",
       achievements: [
         "20+ years global experience",
