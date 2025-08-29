@@ -36,7 +36,7 @@ const DoctorsPage = ({ onNavigate }: DoctorsPageProps) => {
       qualification: "BDS, MDS (Conservative Dentistry)",
       experience: "7+ years",
       specialization: "Modern Dental Procedures, Conservative Dentistry",
-      image: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/WhatsApp Image 2025-08-19 at 21.42.52.jpeg",
       description: "Dr. Avani Shaurin Bhuta is the head dental surgeon of Sans Cavité dental clinic with more than 7 years of experience catering to modern day dental procedures. Her expertise in conservative dentistry ensures patients receive the most advanced and minimally invasive treatments available.",
       achievements: [
         "Modern dental procedure specialist",
