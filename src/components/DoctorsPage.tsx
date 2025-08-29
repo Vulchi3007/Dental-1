@@ -82,7 +82,7 @@ const DoctorsPage = ({ onNavigate }: DoctorsPageProps) => {
       qualification: "BDS, MDS (Endodontics)",
       experience: "17+ years",
       specialization: "Root Canal Procedures, Single Visit Treatments",
-      image: "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/WhatsApp Image 2025-08-19 at 21.42.02.jpeg",
       description: "Dr. Siddharth Raut is an endodontist and integral team member of Sans Cavité having more than 17 years of experience and specializes in root canal procedures with the latest systems which gives patients a comforting experience. Single visit root canals is his forte, having treated thousands of patients for the same.",
       achievements: [
         "17+ years endodontic expertise",
