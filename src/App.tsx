@@ -1,98 +1,855 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, MapPin, Clock, Bluetooth as Tooth } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Clock, Shield, Award, Star, CheckCircle, Calendar, MessageCircle, Bluetooth as Tooth, AlertCircle, DollarSign, Plane, Heart, Globe, Users, TrendingDown, FileText } from 'lucide-react';
+
+// Import page components
 import TreatmentMegaMenu from './components/TreatmentMegaMenu';
-import WhatsAppButton from './components/WhatsAppButton';
-import TreatmentsPage from './components/TreatmentsPage';
-import TestimonialsPage from './components/TestimonialsPage';
-import TravelPage from './components/TravelPage';
-import AboutPage from './components/AboutPage';
-import DoctorsPage from './components/DoctorsPage';
-import TreatmentDetailPage from './components/TreatmentDetailPage';
+import DentalImplantsPage from './components/TreatmentPages/DentalImplantsPage';
+import TeethWhiteningPage from './components/TreatmentPages/TeethWhiteningPage';
+import DentalVeneersPage from './components/TreatmentPages/DentalVeneersPage';
 import RootCanalPage from './components/TreatmentPages/RootCanalPage';
 import WhiteFillingsPage from './components/TreatmentPages/WhiteFillingsPage';
-import TeethWhiteningPage from './components/TreatmentPages/TeethWhiteningPage';
-import DentalImplantsPage from './components/TreatmentPages/DentalImplantsPage';
-import BracesPage from './components/TreatmentPages/BracesPage';
-import ClearAlignersPage from './components/TreatmentPages/ClearAlignersPage';
-import DentalVeneersPage from './components/TreatmentPages/DentalVeneersPage';
-import SmileMakeoverPage from './components/TreatmentPages/SmileMakeoverPage';
 import CrownsPage from './components/TreatmentPages/CrownsPage';
 import BridgesPage from './components/TreatmentPages/BridgesPage';
-import ScalingCleaningPage from './components/TreatmentPages/ScalingCleaningPage';
+import SmileMakeoverPage from './components/TreatmentPages/SmileMakeoverPage';
+import GumContouringPage from './components/TreatmentPages/GumContouringPage';
+import BracesPage from './components/TreatmentPages/BracesPage';
+import ClearAlignersPage from './components/TreatmentPages/ClearAlignersPage';
 import ToothExtractionPage from './components/TreatmentPages/ToothExtractionPage';
 import WisdomToothPage from './components/TreatmentPages/WisdomToothPage';
-import GumContouringPage from './components/TreatmentPages/GumContouringPage';
-import LingualBracesPage from './components/TreatmentPages/LingualBracesPage';
-import RetainersPage from './components/TreatmentPages/RetainersPage';
 import DenturesPage from './components/TreatmentPages/DenturesPage';
+import ScalingCleaningPage from './components/TreatmentPages/ScalingCleaningPage';
+import RetainersPage from './components/TreatmentPages/RetainersPage';
+import LingualBracesPage from './components/TreatmentPages/LingualBracesPage';
+import TreatmentsPage from './components/TreatmentsPage';
+import AboutPage from './components/AboutPage';
+import TestimonialsPage from './components/TestimonialsPage';
+import TravelPage from './components/TravelPage';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    treatment: '',
+    message: '',
+    preferredDate: ''
+  });
 
-  const handleNavigation = (page: string) => {
+  // Function to change page and scroll to top
+  const navigateToPage = (page: string) => {
     setCurrentPage(page);
-    setIsMenuOpen(false);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBookConsultation = () => {
-    setShowAppointmentModal(true);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const closeAppointmentModal = () => {
-    setShowAppointmentModal(false);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    alert('Thank you for your inquiry! We will contact you within 24 hours.');
   };
+
+  const renderHomePage = () => (
+    <div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-mint/5 to-white py-8 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+            <div>
+              <div className="bg-mint/10 text-mint px-4 py-2 rounded-full text-sm font-semibold w-fit mb-6">
+                <span className="inline-flex items-center">
+                  <span className="w-2 h-2 bg-mint-500 rounded-full mr-2 animate-pulse-gentle"></span>
+                  Save up to 85% on Dental Treatments
+                </span>
+              </div>
+              
+<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+  Premium Dental Care in
+  <span className="text-transparent bg-gradient-to-r from-mint-600 to-mint-500 bg-clip-text"> Mumbai, India</span>
+</h1>
+<p className="mt-6 text-xl text-gray-600 leading-relaxed">
+  Experience world-class dental treatments at Sans Cavité with savings up to 85%. Our state-of-the-art facility in Mumbai combines advanced technology with personalized care for international patients.
+</p>
+
+{/* Expanded Info */}
+<p className="mt-4 text-lg text-gray-600 leading-relaxed">
+  Whether you're visiting from the USA, UK, UAE, Australia, Canada, or beyond, our multilingual team ensures a seamless dental tourism experience from start to finish. We assist with travel planning, hotel accommodations, and local transportation to make your journey hassle-free.
+</p>
+<p className="mt-4 text-lg text-gray-600 leading-relaxed">
+  Our internationally trained dentists specialize in cosmetic dentistry, dental implants, smile makeovers, and full mouth rehabilitation. We follow global sterilization protocols and use FDA-approved materials for your safety and peace of mind.
+</p>
+<p className="mt-4 text-lg text-gray-600 leading-relaxed">
+  Combine your dental care with a memorable vacation in Mumbai—India's vibrant city filled with rich culture, beautiful beaches, and historic landmarks. Your smile transformation is just a flight away.
+</p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <button 
+                  onClick={() => navigateToPage('contact')}
+                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 text-center"
+                >
+                  Get Free Quote
+                </button>
+                <button 
+                  onClick={() => navigateToPage('appointment')}
+                  className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 text-center"
+                >
+                  Book Appointment
+                </button>
+              </div>
+              <div className="mt-8 flex items-center space-x-8">
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-mint-500 mr-2" />
+                  <span className="text-sm text-gray-600">NABH Accredited</span>
+                </div>
+                <div className="flex items-center">
+                  <Award className="h-5 w-5 text-mint-500 mr-2" />
+                  <span className="text-sm text-gray-600">ISO Certified</span>
+                </div>
+                <div className="flex items-center">
+                  <Globe className="h-5 w-5 text-mint-500 mr-2" />
+                  <span className="text-sm text-gray-600">25+ Countries Served</span>
+                </div>
+              </div>
+            </div>
+            <div className="mt-12 lg:mt-0">
+              <img 
+                src="/Main page.png" 
+                alt="Dental Tourism - Premium dental care in Mumbai, India" 
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Brief */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Sans Cavité</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Mumbai's premier dental tourism destination with 15+ years of excellence
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+              <p className="text-gray-600 mb-6">
+                Since 2010, Sans Cavité has been transforming smiles for international patients with world-class care, 
+                cutting-edge technology, and significant cost savings compared to Western countries.
+              </p>
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-mint-600">5000+</div>
+                  <div className="text-sm text-gray-600">Patients Treated</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-mint-600">98%</div>
+                  <div className="text-sm text-gray-600">Satisfaction Rate</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-mint-600">25+</div>
+                  <div className="text-sm text-gray-600">Countries</div>
+                </div>
+              </div>
+              <button 
+                onClick={() => navigateToPage('about')}
+                className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+              >
+                Learn More About Us
+              </button>
+            </div>
+            <div>
+              <img 
+                src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqSXV-CG6vXS2Gim3kylN3FGUtXQZlrdCT3_ZPnzM5ns0VZG2R_GFn4tvGNVqMbAL1qZQnaoVp6Zq8BUnrhC8hhDdX6YMapE8izw0A7lraquruqO0m8e_thCZ4UtVKMIWuI1ZwH=s1360-w1360-h1020-rw" 
+                alt="Modern dental clinic"
+                className="rounded-2xl shadow-lg w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatments Brief */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Treatments</h2>
+            <p className="text-xl text-gray-600">Comprehensive dental care with international standards</p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Tooth className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Dental Implants</h3>
+              <p className="text-sm text-mint-600 font-semibold mb-3">From ₹20,000</p>
+              <p className="text-xs text-gray-500">Permanent tooth replacement</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Star className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Smile Makeover</h3>
+              <p className="text-sm text-mint-600 font-semibold mb-3">From ₹80,000</p>
+              <p className="text-xs text-gray-500">Complete transformation</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Heart className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Root Canal</h3>
+              <p className="text-sm text-mint-600 font-semibold mb-3">From ₹8,000</p>
+              <p className="text-xs text-gray-500">Pain-free treatment</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 text-center group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Shield className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="font-semibent text-gray-900 mb-2">Full Mouth</h3>
+              <p className="text-sm text-mint-600 font-semibold mb-3">From ₹1,50,000</p>
+              <p className="text-xs text-gray-500">Complete restoration</p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              onClick={() => navigateToPage('treatments')}
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+            >
+              View All Treatments & Gallery
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Sans Cavité?</h2>
+            <p className="text-xl text-gray-600">Excellence in dental care with international standards</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl text-center shadow-soft hover:shadow-medium transition-all duration-300 group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <TrendingDown className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Save 60-85%</h3>
+              <p className="text-gray-600 text-sm">Compared to Australia, UK, USA</p>
+            </div>
+            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl text-center shadow-soft hover:shadow-medium transition-all duration-300 group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Award className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Modern Technology</h3>
+              <p className="text-gray-600 text-sm">Latest equipment & techniques</p>
+            </div>
+            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl text-center shadow-soft hover:shadow-medium transition-all duration-300 group">
+              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-3 rounded-xl w-fit mx-auto mb-4 group-hover:from-mint-200 group-hover:to-mint-100 transition-all duration-300">
+                <Users className="h-8 w-8 text-mint-600 group-hover:text-mint-700 transition-colors duration-300" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Expert Dentists</h3>
+              <p className="text-gray-600 text-sm">15+ years international experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Brief */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Patient Stories</h2>
+            <p className="text-xl text-gray-600">Hear from our satisfied international patients</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 italic mb-4">
+                "I saved over $20,000 compared to Australia and received exceptional care. 
+                My new smile has completely transformed my confidence!"
+              </p>
+              <div className="flex items-center">
+                <img 
+                  src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=100" 
+                  alt="Patient"
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold">Sarah Johnson</div>
+                  <div className="text-sm text-gray-600">Australia - Smile Makeover</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 italic mb-4">
+                "The quality of care exceeded my expectations. Dr. Abhuta and his team are truly world-class. 
+                I would definitely recommend Sans Cavité."
+              </p>
+              <div className="flex items-center">
+                <img 
+                  src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=100" 
+                  alt="Patient"
+                  className="w-12 h-12 rounded-full mr-4"
+                />
+                <div>
+                  <div className="font-semibold">James Mitchell</div>
+                  <div className="text-sm text-gray-600">UK - Dental Implants</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              onClick={() => navigateToPage('testimonials')}
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+            >
+              Read All Reviews & See Before/After Gallery
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Travel Assistance Brief */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Travel Support</h2>
+            <p className="text-xl text-gray-600">We handle everything for your dental tourism journey</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center">
+              <Plane className="h-12 w-12 text-mint mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Visa & Travel</h3>
+              <p className="text-gray-600 text-sm">Complete visa assistance and airport pickup</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="h-12 w-12 text-mint mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Accommodation</h3>
+              <p className="text-gray-600 text-sm">Comfortable stays near our clinic</p>
+            </div>
+            <div className="text-center">
+              <Clock className="h-12 w-12 text-mint mb-4 mx-auto" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">24/7 Support</h3>
+              <p className="text-gray-600 text-sm">Round-the-clock patient care</p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              onClick={() => navigateToPage('dental-tourism')}
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+            >
+              View Travel Services & Mumbai Guide
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Brief */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Questions</h2>
+            <p className="text-xl text-gray-600">Quick answers to frequently asked questions</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">Is dental treatment in India safe?</h3>
+              <p className="text-gray-600 text-sm">Yes, we follow international safety protocols with NABH accreditation.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">What visa do I need?</h3>
+              <p className="text-gray-600 text-sm">Medical Visa (M Visa) - we provide complete assistance.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">How long should I stay?</h3>
+              <p className="text-gray-600 text-sm">3-14 days depending on treatment complexity.</p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              onClick={() => navigateToPage('faq')}
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+            >
+              View All FAQs & Detailed Answers
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Brief */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Dental Tourism Insights</h2>
+            <p className="text-xl text-gray-600">Expert guides and patient stories</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="bg-gray-50 rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                alt="Blog post"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">How to Save 85% on Dental Care</h3>
+                <p className="text-gray-600 text-sm">Complete cost breakdown and savings guide</p>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-2xl overflow-hidden">
+              <img 
+                src="/Dental planning.png" 
+                alt="Blog post"
+                className="w-full h-49 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">Preparing for Your Dental Trip</h3>
+                <p className="text-gray-600 text-sm">Essential planning guide for dental tourism</p>
+              </div>
+            </div>
+            <div className="bg-gray-50 rounded-2xl overflow-hidden">
+              <img 
+                src="https://www.andbeyond.com/wp-content/uploads/sites/5/Chhatrapati-Shivaji-Terminus-railway-station-mumbai.jpg" 
+                alt="Blog post"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-gray-900 mb-2">Exploring Mumbai</h3>
+                <p className="text-gray-600 text-sm">Top attractions for dental tourists</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              onClick={() => navigateToPage('blog')}
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+            >
+              Read All Articles & Guides
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Get Your Free Consultation</h2>
+            <p className="text-xl text-gray-600">Contact us today to start your dental journey</p>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Treatment Interested In</label>
+                <select 
+                  name="treatment"
+                  value={formData.treatment}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                >
+                  <option value="">Select Treatment</option>
+                  <option value="implants">Dental Implants</option>
+                  <option value="smile-makeover">Smile Makeover</option>
+                  <option value="root-canal">Root Canal</option>
+                  <option value="full-mouth">Full Mouth Restoration</option>
+                  <option value="veneers">Veneers</option>
+                  <option value="whitening">Teeth Whitening</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                placeholder="Tell us about your dental needs..."
+              ></textarea>
+            </div>
+            
+            <div className="text-center">
+              <button 
+                type="submit"
+                className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+
+  const renderContactPage = () => (
+    <div className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Contact Sans Cavité</h1>
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
+            <div className="space-y-6">
+              <div className="flex items-start">
+                <MapPin className="h-6 w-6 text-mint mr-4 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Address</h3>
+                  <p className="text-gray-600">1st floor, Ravi Krupa, 103, BA Khimji Rd, Matunga East, Mumbai, Maharashtra 400019</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Phone className="h-6 w-6 text-mint mr-4 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Phone</h3>
+                  <p className="text-gray-600">Main: +91 98212 74474</p>
+                  <p className="text-red-600 font-semibold">Emergency: +91 98195 74474 (24/7)</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Mail className="h-6 w-6 text-mint mr-4 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Email</h3>
+                  <p className="text-gray-600">info@sanscavite.com</p>
+                  <p className="text-gray-600">Shaurinabhuta@sanscavite.com</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <Clock className="h-6 w-6 text-mint mr-4 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-900">Office Hours</h3>
+                  <p className="text-gray-600">Monday–Friday: 8:00 AM – 6:00 PM</p>
+                  <p className="text-gray-600">Saturday: 9:00 AM – 4:00 PM</p>
+                  <p className="text-red-600 font-semibold">Sunday: Emergency Only</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <form onSubmit={handleSubmit} className="bg-gray-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Schedule Consultation</h3>
+              
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                />
+              </div>
+              
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Treatment</label>
+                <select 
+                  name="treatment"
+                  value={formData.treatment}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  required
+                >
+                  <option value="">Select Treatment</option>
+                  <option value="implants">Dental Implants</option>
+                  <option value="smile-makeover">Smile Makeover</option>
+                  <option value="root-canal">Root Canal</option>
+                  <option value="full-mouth">Full Mouth Restoration</option>
+                  <option value="veneers">Veneers</option>
+                  <option value="whitening">Teeth Whitening</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                  placeholder="Describe your dental needs..."
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit"
+                className="w-full bg-gradient-to-r from-mint-600 to-mint-500 text-white py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+              >
+                Schedule Consultation
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderAppointmentPage = () => (
+    <div className="py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Schedule Your Appointment</h1>
+          <p className="text-xl text-gray-600">Book your consultation and start your dental tourism journey</p>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+              <input 
+                type="text" 
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                required
+              />
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+              <input 
+                type="tel" 
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+              <input 
+                type="date" 
+                name="preferredDate"
+                value={formData.preferredDate}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+              />
+            </div>
+          </div>
+          
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Treatment of Interest *</label>
+            <select 
+              name="treatment"
+              value={formData.treatment}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+              required
+            >
+              <option value="">Select Treatment</option>
+              <option value="implants">Dental Implants</option>
+              <option value="smile-makeover">Smile Makeover</option>
+              <option value="root-canal">Root Canal + Crown</option>
+              <option value="full-mouth">Full Mouth Restoration</option>
+              <option value="veneers">Veneers & Cosmetic Dentistry</option>
+              <option value="whitening">Teeth Whitening</option>
+              <option value="consultation">General Consultation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
+            <textarea 
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={4}
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-mint focus:border-transparent"
+              placeholder="Please describe your dental concerns..."
+            ></textarea>
+          </div>
+          
+          <div className="text-center">
+            <button 
+              type="submit"
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
+            >
+              Book My Appointment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 
   const renderPage = () => {
+    // Handle individual treatment pages with SEO-friendly URLs
+    if (currentPage.startsWith('treatments-')) {
+      const treatmentId = currentPage.replace('treatments-', '');
+      
+      switch (treatmentId) {
+        case 'dental-implants':
+          return <DentalImplantsPage onNavigate={navigateToPage} />;
+        case 'teeth-whitening':
+          return <TeethWhiteningPage onNavigate={navigateToPage} />;
+        case 'dental-veneers':
+          return <DentalVeneersPage onNavigate={navigateToPage} />;
+        case 'root-canal':
+          return <RootCanalPage onNavigate={navigateToPage} />;
+        case 'white-fillings':
+          return <WhiteFillingsPage onNavigate={navigateToPage} />;
+        case 'crowns':
+          return <CrownsPage onNavigate={navigateToPage} />;
+        case 'bridges':
+          return <BridgesPage onNavigate={navigateToPage} />;
+        case 'smile-makeover':
+          return <SmileMakeoverPage onNavigate={navigateToPage} />;
+        case 'gum-contouring':
+          return <GumContouringPage onNavigate={navigateToPage} />;
+        case 'braces':
+          return <BracesPage onNavigate={navigateToPage} />;
+        case 'clear-aligners':
+          return <ClearAlignersPage onNavigate={navigateToPage} />;
+        case 'tooth-extraction':
+          return <ToothExtractionPage onNavigate={navigateToPage} />;
+        case 'wisdom-tooth':
+          return <WisdomToothPage onNavigate={navigateToPage} />;
+        case 'dentures':
+          return <DenturesPage onNavigate={navigateToPage} />;
+        case 'scaling-cleaning':
+          return <ScalingCleaningPage onNavigate={navigateToPage} />;
+        case 'retainers':
+          return <RetainersPage onNavigate={navigateToPage} />;
+        case 'lingual-braces':
+          return <LingualBracesPage onNavigate={navigateToPage} />;
+        default:
+          // For treatments not yet implemented, redirect to treatments page
+          return <TreatmentsPage onBookConsultation={() => navigateToPage('appointment')} onNavigate={navigateToPage} />;
+      }
+    }
+    
     switch (currentPage) {
-      case 'treatments':
-        return <TreatmentsPage onBookConsultation={handleBookConsultation} onNavigate={handleNavigation} />;
-      case 'testimonials':
-        return <TestimonialsPage />;
-      case 'travel':
-        return <TravelPage />;
       case 'about':
         return <AboutPage />;
-      case 'doctors':
-        return <DoctorsPage onNavigate={handleNavigation} />;
-      case 'treatments-root-canal':
-        return <RootCanalPage onNavigate={handleNavigation} />;
-      case 'treatments-white-fillings':
-        return <WhiteFillingsPage onNavigate={handleNavigation} />;
-      case 'treatments-teeth-whitening':
-        return <TeethWhiteningPage onNavigate={handleNavigation} />;
-      case 'treatments-dental-implants':
-        return <DentalImplantsPage onNavigate={handleNavigation} />;
-      case 'treatments-braces':
-        return <BracesPage onNavigate={handleNavigation} />;
-      case 'treatments-clear-aligners':
-        return <ClearAlignersPage onNavigate={handleNavigation} />;
-      case 'treatments-dental-veneers':
-        return <DentalVeneersPage onNavigate={handleNavigation} />;
-      case 'treatments-smile-makeover':
-        return <SmileMakeoverPage onNavigate={handleNavigation} />;
-      case 'treatments-crowns':
-        return <CrownsPage onNavigate={handleNavigation} />;
-      case 'treatments-bridges':
-        return <BridgesPage onNavigate={handleNavigation} />;
-      case 'treatments-scaling-cleaning':
-        return <ScalingCleaningPage onNavigate={handleNavigation} />;
-      case 'treatments-tooth-extraction':
-        return <ToothExtractionPage onNavigate={handleNavigation} />;
-      case 'treatments-wisdom-tooth':
-        return <WisdomToothPage onNavigate={handleNavigation} />;
-      case 'treatments-gum-contouring':
-        return <GumContouringPage onNavigate={handleNavigation} />;
-      case 'treatments-lingual-braces':
-        return <LingualBracesPage onNavigate={handleNavigation} />;
-      case 'treatments-retainers':
-        return <RetainersPage onNavigate={handleNavigation} />;
-      case 'treatments-dentures':
-        return <DenturesPage onNavigate={handleNavigation} />;
+      case 'treatments':
+        return <TreatmentsPage onBookConsultation={() => navigateToPage('appointment')} onNavigate={navigateToPage} />;
+      case 'testimonials':
+        return <TestimonialsPage />;
+      case 'dental-tourism':
+        return <TravelPage />;
+      case 'contact':
+        return renderContactPage();
+      case 'appointment':
+        return renderAppointmentPage();
       default:
-        return <HomePage onNavigate={handleNavigation} onBookConsultation={handleBookConsultation} />;
+        return renderHomePage();
     }
   };
 
@@ -101,61 +858,80 @@ function App() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center cursor-pointer" onClick={() => handleNavigation('home')}>
-              <Tooth className="h-8 w-8 text-mint mr-3" />
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Sans Cavité</h1>
-                <p className="text-xs text-gray-600">Premium Dental Tourism</p>
-              </div>
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center cursor-pointer" onClick={() => navigateToPage('home')}>
+              <img 
+                src="/Logo_sc-1.png" 
+                alt="Sans Cavité Logo" 
+                className="h-16 w-auto"
+              />
             </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            
+            <nav className="hidden md:flex space-x-8">
               <button 
-                onClick={() => handleNavigation('home')}
-                className={`transition-colors ${currentPage === 'home' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
-              >
+                onClick={() => navigateToPage('home')}
+                className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'home'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}       >
                 Home
               </button>
-              <TreatmentMegaMenu onNavigate={handleNavigation} currentPage={currentPage} />
               <button 
-                onClick={() => handleNavigation('doctors')}
-                className={`transition-colors ${currentPage === 'doctors' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                onClick={() => navigateToPage('about')}
+                 className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'about'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}      >
+                About
+              </button>
+              <TreatmentMegaMenu onNavigate={navigateToPage} currentPage={currentPage} />
+              <button 
+                onClick={() => navigateToPage('dental-tourism')}
+                className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'dental-tourism'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}
               >
-                Doctors
+                Dental Tourism
               </button>
               <button 
-                onClick={() => handleNavigation('testimonials')}
-                className={`transition-colors ${currentPage === 'testimonials' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                onClick={() => navigateToPage('testimonials')}
+                className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'testimonials'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}
               >
                 Testimonials
               </button>
               <button 
-                onClick={() => handleNavigation('travel')}
-                className={`transition-colors ${currentPage === 'travel' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                onClick={() => navigateToPage('contact')}
+                className={`relative inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold
+    transition-all duration-300 ease-in-out transform hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-mint-500 focus-visible:ring-offset-1
+    ${currentPage === 'contact'
+      ? 'bg-gradient-to-r from-mint-600 to-mint-500 text-white shadow-md hover:shadow-lg'
+      : 'text-gray-700 hover:text-mint-700 hover:bg-mint-50 hover:shadow-lg'
+    }`}
               >
-                Travel Guide
-              </button>
-              <button 
-                onClick={() => handleNavigation('about')}
-                className={`transition-colors ${currentPage === 'about' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
-              >
-                About
+                Contact
               </button>
             </nav>
 
-            {/* Contact Info & Mobile Menu */}
             <div className="flex items-center space-x-4">
-              <a href="tel:+919821274474" className="hidden lg:flex items-center text-mint hover:text-mint-dark transition-colors">
-                <Phone className="h-4 w-4 mr-2" />
-                <span className="font-semibold">+91 98212 74474</span>
+              <a href="tel:+919821274474" className="flex items-center space-x-2 text-mint-600 hover:text-mint-700 transition-colors">
+                <Phone className="h-5 w-5" />
+                <span className="text-sm font-medium hidden lg:block">+91 98212 74474</span>
               </a>
-              
-              <button
+              <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden text-gray-600 hover:text-mint transition-colors"
+                className="md:hidden"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -163,309 +939,145 @@ function App() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-4 py-2 space-y-1">
+          <div className="md:hidden bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               <button 
-                onClick={() => handleNavigation('home')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'home' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
+                onClick={() => {navigateToPage('home'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
+
               >
                 Home
               </button>
               <button 
-                onClick={() => handleNavigation('treatments')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'treatments' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
+                onClick={() => {navigateToPage('about'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
+              >
+                About
+              </button>
+              <button 
+                onClick={() => {navigateToPage('treatments'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
               >
                 Treatments
               </button>
               <button 
-                onClick={() => handleNavigation('doctors')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'doctors' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
+                onClick={() => {navigateToPage('dental-tourism'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
               >
-                Doctors
+                Dental Tourism
               </button>
               <button 
-                onClick={() => handleNavigation('testimonials')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'testimonials' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
+                onClick={() => {navigateToPage('testimonials'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
               >
                 Testimonials
               </button>
               <button 
-                onClick={() => handleNavigation('travel')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'travel' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
+                onClick={() => {navigateToPage('contact'); setIsMenuOpen(false);}}
+                className="block w-full text-left px-5 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-mint-700 hover:bg-mint-100 active:bg-mint-200 transition-all duration-200 ease-in-out"
+
               >
-                Travel Guide
+                Contact
               </button>
-              <button 
-                onClick={() => handleNavigation('about')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'about' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
-                }`}
-              >
-                About
-              </button>
-              <a href="tel:+919821274474" className="block w-full text-left px-3 py-2 text-mint font-semibold">
-                Call +91 98212 74474
-              </a>
             </div>
           </div>
         )}
       </header>
 
-      {/* Main Content */}
-      <main>
-        {renderPage()}
-      </main>
+      {/* Page Content */}
+      {renderPage()}
 
-      {/* WhatsApp Button */}
-      <WhatsAppButton />
-
-      {/* Appointment Modal */}
-      {showAppointmentModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Book Your Consultation</h3>
-            <p className="text-gray-600 mb-6">
-              Ready to transform your smile? Contact us directly to schedule your free consultation.
-            </p>
-            <div className="space-y-4">
-              <a 
-                href="tel:+919821274474"
-                className="block w-full bg-mint text-white text-center py-3 rounded-xl font-semibold hover:bg-mint-dark transition-colors"
-              >
-                Call +91 98212 74474
-              </a>
-              <a 
-                href="https://wa.me/919821274474"
-                className="block w-full bg-green-500 text-white text-center py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors"
-              >
-                WhatsApp Us
-              </a>
-              <button 
-                onClick={closeAppointmentModal}
-                className="block w-full border border-gray-300 text-gray-600 text-center py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// HomePage Component
-const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: string) => void; onBookConsultation: () => void }) => {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 py-20">
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-from-left">
-              <h1 className="text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Transform Your Smile in 
-                <span className="text-transparent bg-gradient-to-r from-mint-600 to-mint-500 bg-clip-text"> Mumbai</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Save up to 85% on world-class dental treatments. Experience premium dental tourism 
-                with ISO-certified care, 24/7 support, and stunning results that last a lifetime.
-              </p>
-              
-              {/* Key Benefits */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">Save up to 85%</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">ISO Certified</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">24/7 Support</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">English Speaking</span>
-                </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center mb-4">
+                <img 
+                  src="/Logo_sc-1.png" 
+                  alt="Sans Cavité Logo" 
+                  className="h-12 w-auto"
+                />
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={onBookConsultation}
-                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
-                >
-                  Book Free Consultation 🦷
-                </button>
-                <a 
-                  href="tel:+919821274474"
-                  className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 text-center"
-                >
-                  Call +91 98212 74474
+              <p className="text-gray-400 mb-4">
+                Premium dental care in Mumbai with international standards and affordable pricing for dental tourism.
+              </p>
+              <div className="flex space-x-4">
+                <a href="tel:+919821274474" className="bg-mint text-white px-4 py-2 rounded-lg hover:bg-mint-dark transition-colors text-sm">
+                  Call Now
+                </a>
+                <a href="mailto:info@sanscavite.com" className="border border-mint text-mint px-4 py-2 rounded-lg hover:bg-mint hover:text-white transition-colors text-sm">
+                  Email Us
                 </a>
               </div>
             </div>
             
-            <div className="animate-slide-in-from-right">
-              <img 
-                src="/Main page.png" 
-                alt="Sans Cavité Dental Clinic - Premium dental care in Mumbai" 
-                className="rounded-3xl shadow-2xl w-full hover:shadow-glow-lg transition-shadow duration-500"
-              />
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li><button onClick={() => navigateToPage('about')} className="hover:text-mint-400 transition-colors">About Us</button></li>
+                <li><button onClick={() => navigateToPage('treatments')} className="hover:text-mint-400 transition-colors">Treatments</button></li>
+                <li><button onClick={() => navigateToPage('testimonials')} className="hover:text-mint-400 transition-colors">Testimonials</button></li>
+                <li><button onClick={() => navigateToPage('blog')} className="hover:text-mint-400 transition-colors">Blog</button></li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-gradient-to-br from-mint-50 to-mint-100 rounded-2xl hover:from-mint-100 hover:to-mint-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-large">
-              <div className="text-4xl font-bold text-mint-600 mb-2">5000+</div>
-              <div className="text-gray-600">International Patients</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-mint-50 to-mint-100 rounded-2xl hover:from-mint-100 hover:to-mint-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-large">
-              <div className="text-4xl font-bold text-mint-600 mb-2">85%</div>
-              <div className="text-gray-600">Cost Savings</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-mint-50 to-mint-100 rounded-2xl hover:from-mint-100 hover:to-mint-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-large">
-              <div className="text-4xl font-bold text-mint-600 mb-2">25+</div>
-              <div className="text-gray-600">Countries Served</div>
-            </div>
-            <div className="text-center p-6 bg-gradient-to-br from-mint-50 to-mint-100 rounded-2xl hover:from-mint-100 hover:to-mint-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-large">
-              <div className="text-4xl font-bold text-mint-600 mb-2">15+</div>
-              <div className="text-gray-600">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-br from-mint/5 to-mint/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why International Patients Choose Sans Cavité</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience world-class dental care with significant cost savings and exceptional service
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-4 rounded-2xl w-fit mb-6 hover:from-mint-200 hover:to-mint-100 transition-all duration-300">
-                <Phone className="h-8 w-8 text-mint-600" />
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+              <div className="space-y-2 text-gray-400">
+                <p>1st floor, Ravi Krupa, 103, BA Khimji Rd</p>
+                <p>Matunga East, Mumbai 400019</p>
+                <p>Phone: +91 98212 74474</p>
+                <p className="text-red-400">Emergency: +91 98195 74474</p>
+                <p>info@sanscavite.com</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Patient Support</h3>
-              <p className="text-gray-600 leading-relaxed">Round-the-clock assistance for international patients with emergency support and multilingual staff.</p>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-4 rounded-2xl w-fit mb-6 hover:from-mint-200 hover:to-mint-100 transition-all duration-300">
-                <MapPin className="h-8 w-8 text-mint-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Prime Mumbai Location</h3>
-              <p className="text-gray-600 leading-relaxed">Conveniently located near international airport with easy access to hotels and tourist attractions.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2">
-              <div className="bg-gradient-to-br from-mint-100 to-mint-50 p-4 rounded-2xl w-fit mb-6 hover:from-mint-200 hover:to-mint-100 transition-all duration-300">
-                <Clock className="h-8 w-8 text-mint-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Quick Treatment</h3>
-              <p className="text-gray-600 leading-relaxed">Complete most treatments in 3-7 days, perfect for combining with your Indian vacation experience.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Treatments Preview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Popular Dental Treatments</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our most sought-after treatments with transparent pricing and exceptional results
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Dental Implants", price: "From ₹20,000", savings: "Save ₹1,80,000", image: "/Dental implant.jpeg" },
-              { name: "Smile Makeover", price: "From ₹80,000", savings: "Save ₹7,20,000", image: "/smile makeover.jpeg" },
-              { name: "Teeth Whitening", price: "From ₹5,000", savings: "Save ₹15,000", image: "/teeth-whitening.jpg" }
-            ].map((treatment, index) => (
-              <div key={index} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2 group">
-                <img 
-                  src={treatment.image} 
-                  alt={treatment.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-mint-600 transition-colors">{treatment.name}</h3>
-                  <p className="text-2xl font-bold text-mint-600 mb-2">{treatment.price}</p>
-                  <p className="text-green-600 font-semibold text-sm mb-4">{treatment.savings}</p>
-                  <button 
-                    onClick={() => onNavigate('treatments')}
-                    className="w-full bg-gradient-to-r from-mint-600 to-mint-500 text-white py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
-                  >
-                    Learn More
-                  </button>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
+              <div className="space-y-2 text-gray-400">
+                <p>Monday–Friday: 8:00 AM – 6:00 PM</p>
+                <p>Saturday: 9:00 AM – 4:00 PM</p>
+                <p className="text-red-400">Sunday: Emergency Only</p>
+                <div className="mt-4">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Award className="h-4 w-4 text-mint-400" />
+                    <span className="text-sm">ISO Certified</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Shield className="h-4 w-4 text-mint-400" />
+                    <span className="text-sm">NABH Accredited</span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => onNavigate('treatments')}
-              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
-            >
-              View All Treatments
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-mint/10 to-mint/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Transform Your Smile?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied international patients who have saved money and achieved beautiful smiles with Sans Cavité.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={onBookConsultation}
-              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
-            >
-              Get Free Consultation
-            </button>
-            <a 
-              href="tel:+919821274474"
-              className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 text-center"
-            >
-              Call +91 98212 74474
-            </a>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 text-center md:text-left">
+                &copy; 2024 Sans Cavité Dental Clinic. All rights reserved.
+              </p>
+              <div className="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" className="text-gray-400 hover:text-mint-400 transition-colors text-sm">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-mint-400 transition-colors text-sm">Terms of Service</a>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </footer>
+
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
-};
+}
 
 export default App;
