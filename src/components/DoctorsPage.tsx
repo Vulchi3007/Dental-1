@@ -13,7 +13,7 @@ const DoctorsPage = ({ onNavigate }: DoctorsPageProps) => {
       qualification: "BDS, MDS (Oral & Maxillofacial Surgery)",
       experience: "17+ years",
       specialization: "Modern Dental Procedures, Oral Surgery, Dental Implants",
-      image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "public/WhatsApp Image 2025-08-07 at 10.55.15 copy.jpeg",
       description: "Dr. Shaurin Ajay Bhuta is the chief dental surgeon of Sans Cavité dental clinic, specializing in modern dental procedures with over 17 years of experience in the field. Having treated more than 10,000+ patients including many celebrities, HNI clients, and international patients, Dr. Bhuta brings world-class expertise to every treatment.",
       achievements: [
         "10,000+ successful treatments",
