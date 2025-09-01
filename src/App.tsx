@@ -275,7 +275,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 py-20">
+      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-from-left">
@@ -283,13 +283,13 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                 Transform Your Smile in 
                 <span className="text-transparent bg-gradient-to-r from-mint-600 to-mint-500 bg-clip-text"> Mumbai</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Save up to 85% on world-class dental treatments. Experience premium dental tourism 
                 with ISO-certified care, 24/7 support, and stunning results that last a lifetime.
               </p>
               
               {/* Key Benefits */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-mint rounded-full"></div>
                   <span className="text-gray-700 font-medium">Save up to 85%</span>
@@ -336,7 +336,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center p-6 bg-gradient-to-br from-mint-50 to-mint-100 rounded-2xl hover:from-mint-100 hover:to-mint-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-large">
@@ -360,7 +360,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-br from-mint/5 to-mint/10">
+      <section className="py-16 bg-gradient-to-br from-mint/5 to-mint/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why International Patients Choose Sans Cavité</h2>
@@ -398,7 +398,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
       </section>
 
       {/* Popular Treatments Preview */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Popular Dental Treatments</h2>
@@ -446,10 +446,10 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-mint/10 to-mint/5">
+      <section className="py-16 bg-gradient-to-r from-mint/10 to-mint/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Transform Your Smile?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
             Join thousands of satisfied international patients who have saved money and achieved beautiful smiles with Sans Cavité.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
