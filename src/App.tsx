@@ -341,7 +341,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-mint-200 to-mint-100 rounded-3xl opacity-20 blur-xl"></div>
               <img 
-                src="/Main page.png" 
+                src="/WhatsApp Image 2025-07-02 at 14.32.58.jpeg" 
                 alt="Sans Cavité Dental Clinic - Premium dental care in Mumbai" 
                   className="relative rounded-3xl shadow-2xl w-full max-w-lg hover:shadow-glow-lg transition-all duration-500 transform hover:scale-105"
               />
