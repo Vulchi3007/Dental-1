@@ -192,11 +192,6 @@ const TestimonialsPage = () => {
               <Quote className="h-8 w-8 text-mint/30 mb-4" />
               
               <div className="flex items-center mb-6">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900 text-lg">{testimonial.name}</h3>
                   <div className="flex items-center text-sm text-gray-600 mb-1">
@@ -254,17 +249,10 @@ const TestimonialsPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {beforeAfterGallery.map((item, index) => (
               <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="relative">
-                  <img 
-                    src={item.combinedImage} 
-                    alt={`${item.treatment} transformation`}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute top-4 left-4 bg-mint text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="p-6">
+                  <div className="bg-mint/10 text-mint px-3 py-1 rounded-full text-sm font-semibold w-fit mb-4">
                     Before & After
                   </div>
-                </div>
-                <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{item.treatment}</h3>
                   <p className="text-mint font-semibold mb-2">{item.patient}</p>
                   <p className="text-gray-600 text-sm">{item.description}</p>
@@ -291,15 +279,13 @@ const TestimonialsPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.filter(t => t.videoTestimonial).map((testimonial, index) => (
               <div key={index} className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="relative h-48 bg-gradient-to-br from-mint/20 to-mint/10 flex items-center justify-center">
-                  <div className="bg-white/90 p-4 rounded-full">
+                <div className="p-6">
+                  <div className="bg-mint/10 p-3 rounded-xl w-fit mx-auto mb-4">
                     <Play className="h-8 w-8 text-mint" />
                   </div>
-                  <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                  <div className="bg-black/10 text-gray-700 px-3 py-1 rounded-full text-sm w-fit mb-4">
                     Video Testimonial
                   </div>
-                </div>
-                <div className="p-6">
                   <h3 className="font-bold text-gray-900 mb-2">{testimonial.name}</h3>
                   <p className="text-mint font-semibold mb-2">{testimonial.treatment}</p>
                   <p className="text-gray-600 text-sm">{testimonial.country}</p>
