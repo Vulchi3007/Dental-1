@@ -275,7 +275,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 pt-8 pb-12">
+      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 pt-4 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-from-left">
@@ -283,13 +283,13 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                 Transform Your Smile in 
                 <span className="text-transparent bg-gradient-to-r from-mint-600 to-mint-500 bg-clip-text"> Mumbai</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-4 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-3 leading-relaxed">
                 Save up to 85% on world-class dental treatments. Experience premium dental tourism 
                 with ISO-certified care, 24/7 support, and stunning results that last a lifetime.
               </p>
               
               {/* Key Benefits */}
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 mb-3">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-mint rounded-full"></div>
                   <span className="text-gray-700 font-medium">Save up to 85%</span>
