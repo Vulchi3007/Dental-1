@@ -118,9 +118,9 @@ const TreatmentMegaMenu = ({ onNavigate, currentPage }: TreatmentMegaMenuProps) 
     >
       <button 
         onClick={handleClick}
-        className={`flex items-center space-x-1 transition-colors px-4 py-3 rounded-lg hover:bg-mint/5 ${
-          currentPage === 'treatments' || currentPage.startsWith('treatments-') ? 'text-mint-600' : 'text-gray-600 hover:text-mint-600'
-        } ${isOpen ? 'text-mint-600' : ''} font-medium`}
+        className={`flex items-center space-x-1 transition-all duration-200 px-4 py-3 rounded-lg hover:bg-mint/5 ${
+          currentPage === 'treatments' || currentPage.startsWith('treatments-') ? 'text-mint-600 bg-mint/10' : 'text-gray-600 hover:text-mint-600'
+        } ${isOpen ? 'text-mint-600 bg-mint/5' : ''} font-medium active:bg-mint/20`}
       >
         <span>Treatments</span>
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
