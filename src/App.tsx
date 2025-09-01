@@ -110,7 +110,6 @@ function App() {
                 alt="Sans Cavité Logo" 
                 className="h-10 w-auto mr-3"
               />
-              </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -162,6 +161,7 @@ function App() {
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
+          </div>
           </div>
         </div>
 
