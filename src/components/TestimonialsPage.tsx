@@ -273,6 +273,48 @@ const TestimonialsPage = () => {
           </div>
         </div>
 
+        {/* Before & After Gallery */}
+        <div className="bg-mint/5 rounded-3xl p-12 mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Amazing Smile Transformations</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See the incredible results our patients have achieved with our expert dental treatments. 
+              Each transformation showcases the dramatic improvement and life-changing impact of quality dental care.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {beforeAfterGallery.map((item, index) => (
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <img 
+                  src={item.combinedImage} 
+                  alt={`${item.treatment} before and after transformation`}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="bg-mint/10 text-mint px-3 py-1 rounded-full text-sm font-semibold w-fit mb-4">
+                    Before & After
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.treatment}</h3>
+                  <p className="text-mint font-semibold mb-2">{item.patient}</p>
+                  <p className="text-gray-600 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready for Your Own Transformation?</h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Join thousands of satisfied patients who have achieved their dream smile with our expert dental care. 
+              Your transformation story could be next!
+            </p>
+            <a href="tel:+919821274474" className="bg-mint text-white px-8 py-3 rounded-xl font-semibold hover:bg-mint-dark transition-colors shadow-lg text-center inline-block">
+              Start Your Smile Journey
+            </a>
+          </div>
+        </div>
+
         {/* Video Testimonials Section */}
         <div className="mb-20">
           <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Video Testimonials</h2>
