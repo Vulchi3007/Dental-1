@@ -290,7 +290,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
                 Save up to 85% on world-class dental treatments. Experience premium dental tourism 
-                with ISO-certified care, 24/7 support, and stunning results that last a lifetime.
+                with expert care, 24/7 support, and stunning results that last a lifetime.
               </p>
               
               {/* Key Benefits */}
@@ -298,10 +298,6 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
                   <span className="text-gray-700 font-semibold">Save up to 85%</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
-                  <span className="text-gray-700 font-semibold">ISO Certified</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
@@ -395,7 +391,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                 <Phone className="h-8 w-8 text-mint-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">24/7 Patient Support</h3>
-              <p className="text-gray-600 leading-relaxed">Round-the-clock assistance for international patients with emergency support and multilingual staff.</p>
+              <p className="text-gray-600 leading-relaxed">Round-the-clock assistance for international patients with emergency support and English-speaking staff.</p>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-large transition-all duration-300 transform hover:-translate-y-2">
@@ -411,7 +407,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                 <Clock className="h-8 w-8 text-mint-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Quick Treatment</h3>
-              <p className="text-gray-600 leading-relaxed">Complete most treatments in 3-7 days, perfect for combining with your Indian vacation experience.</p>
+              <p className="text-gray-600 leading-relaxed">Complete most treatments in 3-7 days, perfect for combining with your Mumbai vacation experience.</p>
             </div>
           </div>
         </div>

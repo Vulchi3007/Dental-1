@@ -4,7 +4,7 @@ import { Plane, MapPin, Hotel, Camera, Utensils, Shield, Clock, Users, FileText,
 const TravelPage = () => {
   const heroStats = [
     { number: "70%", label: "Cost Savings", description: "Save thousands compared to Australia, USA, and UK" },
-    { number: "ISO", label: "Certified Clinics", description: "International standards and safety protocols" },
+    { number: "Expert", label: "Dental Care", description: "World-class standards and safety protocols" },
     { number: "0", label: "Waiting Lists", description: "Same week treatment available" },
     { number: "100%", label: "English Speaking", description: "Clear communication throughout" }
   ];
@@ -356,8 +356,8 @@ const TravelPage = () => {
           {/* Additional Stats */}
           <div className="mt-16 grid md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-mint/5 rounded-2xl">
-              <div className="text-3xl font-bold text-mint mb-2">ISO</div>
-              <div className="text-gray-600">Certified Clinics</div>
+              <div className="text-3xl font-bold text-mint mb-2">Expert</div>
+              <div className="text-gray-600">Dental Care</div>
             </div>
             <div className="text-center p-6 bg-mint/5 rounded-2xl">
               <div className="text-3xl font-bold text-mint mb-2">24/7</div>
@@ -366,10 +366,6 @@ const TravelPage = () => {
             <div className="text-center p-6 bg-mint/5 rounded-2xl">
               <div className="text-3xl font-bold text-mint mb-2">15+</div>
               <div className="text-gray-600">Years Experience</div>
-            </div>
-            <div className="text-center p-6 bg-mint/5 rounded-2xl">
-              <div className="text-3xl font-bold text-mint mb-2">5000+</div>
-              <div className="text-gray-600">Happy Patients</div>
             </div>
           </div>
         </div>

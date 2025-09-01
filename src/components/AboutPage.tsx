@@ -31,31 +31,31 @@ const AboutPage = () => {
 
   const certifications = [
     { 
-      name: "ISO 9001:2015", 
-      description: "Quality Management System Certification",
+      name: "Expert Care", 
+      description: "World-Class Dental Standards",
       details: "Ensures consistent quality in all our dental procedures and patient care protocols."
     },
     { 
-      name: "NABH Accredited", 
-      description: "National Accreditation Board for Hospitals",
-      details: "Highest standard of healthcare quality and patient safety in India."
+      name: "Safety First", 
+      description: "Highest Safety Standards",
+      details: "Highest standard of healthcare quality and patient safety protocols."
     },
     { 
-      name: "JCI Standards", 
-      description: "Joint Commission International Compliance",
+      name: "International Standards", 
+      description: "Global Quality Compliance",
       details: "International healthcare standards for quality and patient safety."
     },
     { 
-      name: "AERB Certified", 
-      description: "Atomic Energy Regulatory Board Certification",
-      details: "Safe use of radiation equipment and X-ray machines with proper safety protocols."
+      name: "Advanced Technology", 
+      description: "Modern Equipment Standards",
+      details: "Safe use of advanced equipment and modern technology with proper safety protocols."
     }
   ];
 
   const milestones = [
     { year: "2010", event: "Sans Cavité Dental Clinic Established", description: "Started with a vision to provide world-class dental care" },
     { year: "2012", event: "First International Patient", description: "Welcomed our first patient from Australia" },
-    { year: "2015", event: "NABH Accreditation Achieved", description: "Received national recognition for healthcare quality" },
+    { year: "2015", event: "Quality Standards Achieved", description: "Received recognition for healthcare quality excellence" },
     { year: "2018", event: "5000+ International Patients", description: "Milestone achievement in dental tourism" },
     { year: "2020", event: "Advanced Technology Integration", description: "Introduced latest dental equipment and digital systems" },
     { year: "2024", event: "25+ Countries Served", description: "Expanded reach to patients worldwide" }
@@ -192,23 +192,23 @@ const AboutPage = () => {
 
         {/* Certifications & Accreditations */}
         <div className="bg-mint/5 rounded-2xl p-8 mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Certifications & Accreditations</h2>
+          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Quality Standards</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {certifications.map((cert, index) => (
+            {certifications.map((standard, index) => (
               <div key={index} className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
                 <div className="bg-mint/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Award className="h-8 w-8 text-mint" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{cert.name}</h3>
-                <p className="text-sm text-gray-600 mb-3">{cert.description}</p>
-                <p className="text-xs text-gray-500">{cert.details}</p>
+                <h3 className="font-bold text-gray-900 mb-2">{standard.name}</h3>
+                <p className="text-sm text-gray-600 mb-3">{standard.description}</p>
+                <p className="text-xs text-gray-500">{standard.details}</p>
               </div>
             ))}
           </div>
           <div className="text-center">
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our certifications ensure that we maintain the highest standards of safety, quality, and patient care 
-              in accordance with international healthcare protocols. These accreditations reflect our commitment 
+              Our quality standards ensure that we maintain the highest levels of safety, quality, and patient care 
+              in accordance with international healthcare protocols. These standards reflect our commitment 
               to excellence and continuous improvement in all aspects of dental care.
             </p>
           </div>
@@ -221,7 +221,7 @@ const AboutPage = () => {
             <div className="text-center p-6">
               <Shield className="h-12 w-12 text-mint mb-4 mx-auto" />
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Safety First</h3>
-              <p className="text-gray-600 text-sm">International safety standards with NABH accreditation and strict sterilization protocols</p>
+              <p className="text-gray-600 text-sm">International safety standards with strict protocols and sterilization protocols</p>
             </div>
             <div className="text-center p-6">
               <Users className="h-12 w-12 text-mint mb-4 mx-auto" />

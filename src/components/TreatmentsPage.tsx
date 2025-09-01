@@ -256,7 +256,7 @@ const TreatmentsPage = ({ onBookConsultation, onNavigate }: TreatmentsPageProps)
               <Shield className="h-8 w-8 text-mint-600" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Safe & Sterile</h3>
-            <p className="text-gray-600 text-sm">International safety standards with NABH accreditation</p>
+            <p className="text-gray-600 text-sm">International safety standards with strict protocols</p>
           </div>
           
           <div className="text-center p-6">
