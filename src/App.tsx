@@ -25,6 +25,7 @@ import GumContouringPage from './components/TreatmentPages/GumContouringPage';
 import LingualBracesPage from './components/TreatmentPages/LingualBracesPage';
 import RetainersPage from './components/TreatmentPages/RetainersPage';
 import DenturesPage from './components/TreatmentPages/DenturesPage';
+import Footer from './components/Footer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -227,6 +228,9 @@ function App() {
       <main>
         {renderPage()}
       </main>
+
+      {/* Footer */}
+      <Footer />
 
       {/* WhatsApp Button */}
       <WhatsAppButton />
