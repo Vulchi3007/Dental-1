@@ -105,7 +105,11 @@ function App() {
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => handleNavigation('home')}>
-              <Tooth className="h-8 w-8 text-mint mr-3" />
+              <img 
+                src="/Logo_sc-1.png" 
+                alt="Sans Cavité Logo" 
+                className="h-10 w-auto mr-3"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Sans Cavité</h1>
                 <p className="text-xs text-gray-600">Premium Dental Tourism</p>
