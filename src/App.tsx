@@ -110,9 +110,6 @@ function App() {
                 alt="Sans Cavité Logo" 
                 className="h-10 w-auto mr-3"
               />
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">Sans Cavité</h1>
-                <p className="text-xs text-gray-600">Premium Dental Tourism</p>
               </div>
             </div>
 
