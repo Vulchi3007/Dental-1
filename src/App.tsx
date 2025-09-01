@@ -275,61 +275,81 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 pt-4 pb-12">
+      <section className="relative bg-gradient-to-br from-mint/10 to-mint/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-from-left">
-              <h1 className="text-6xl font-bold text-gray-900 mb-4 leading-tight">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[600px]">
+            <div className="flex flex-col justify-center animate-slide-in-from-left">
+              <div className="mb-6">
+                <span className="bg-mint/20 text-mint-700 px-4 py-2 rounded-full text-sm font-semibold">
+                  #1 Dental Tourism Destination in Mumbai
+                </span>
+              </div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Transform Your Smile in 
                 <span className="text-transparent bg-gradient-to-r from-mint-600 to-mint-500 bg-clip-text"> Mumbai</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-3 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg">
                 Save up to 85% on world-class dental treatments. Experience premium dental tourism 
                 with ISO-certified care, 24/7 support, and stunning results that last a lifetime.
               </p>
               
               {/* Key Benefits */}
-              <div className="grid grid-cols-2 gap-4 mb-3">
+              <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">Save up to 85%</span>
+                  <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
+                  <span className="text-gray-700 font-semibold">Save up to 85%</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">ISO Certified</span>
+                  <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
+                  <span className="text-gray-700 font-semibold">ISO Certified</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">24/7 Support</span>
+                  <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
+                  <span className="text-gray-700 font-semibold">24/7 Support</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-mint rounded-full"></div>
-                  <span className="text-gray-700 font-medium">English Speaking</span>
+                  <div className="w-3 h-3 bg-mint-500 rounded-full"></div>
+                  <span className="text-gray-700 font-semibold">English Speaking</span>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <button 
                   onClick={onBookConsultation}
-                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 active:translate-y-0"
+                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 active:translate-y-0"
                 >
                   Book Free Consultation 🦷
                 </button>
                 <a 
                   href="tel:+919821274474"
-                  className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white active:bg-mint-600 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 active:translate-y-0 text-center"
+                  className="border-2 border-mint-500 text-mint-600 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white active:bg-mint-600 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 active:translate-y-0 text-center"
                 >
                   Call +91 98212 74474
                 </a>
               </div>
+              
+              {/* Trust Indicators */}
+              <div className="flex items-center space-x-6 text-sm text-gray-500">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>5000+ Happy Patients</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>15+ Years Experience</span>
+                </div>
+              </div>
             </div>
             
-            <div className="animate-slide-in-from-right">
+            <div className="flex items-center justify-center animate-slide-in-from-right">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-mint-200 to-mint-100 rounded-3xl opacity-20 blur-xl"></div>
               <img 
                 src="/Main page.png" 
                 alt="Sans Cavité Dental Clinic - Premium dental care in Mumbai" 
-                className="rounded-3xl shadow-2xl w-full hover:shadow-glow-lg transition-shadow duration-500"
+                  className="relative rounded-3xl shadow-2xl w-full max-w-lg hover:shadow-glow-lg transition-all duration-500 transform hover:scale-105"
               />
+              </div>
             </div>
           </div>
         </div>
