@@ -24,16 +24,16 @@ const Footer = () => {
               from over 25 countries worldwide.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/10 active:bg-mint/20">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/10 active:bg-mint/20">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/10 active:bg-mint/20">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/10 active:bg-mint/20">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-mint mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="tel:+919821274474" className="text-gray-300 hover:text-mint transition-colors">
+                  <a href="tel:+919821274474" className="text-gray-300 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">
                     +91 98212 74474
                   </a>
                   <p className="text-sm text-gray-400">24/7 Emergency Support</p>
@@ -55,7 +55,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-mint mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="mailto:info@sanscavite.com" className="text-gray-300 hover:text-mint transition-colors">
+                  <a href="mailto:info@sanscavite.com" className="text-gray-300 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">
                     info@sanscavite.com
                   </a>
                   <p className="text-sm text-gray-400">General Inquiries</p>
@@ -82,12 +82,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">About Us</a>
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">Our Doctors</a>
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">Treatments</a>
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">Testimonials</a>
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">Travel Guide</a>
-              <a href="#" className="block text-gray-300 hover:text-mint transition-colors">Book Consultation</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">About Us</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">Our Doctors</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">Treatments</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">Testimonials</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">Travel Guide</a>
+              <a href="#" className="block text-gray-300 hover:text-mint transition-all duration-200 py-1 hover:pl-2 active:text-mint-400">Book Consultation</a>
             </div>
           </div>
         </div>
@@ -106,10 +106,10 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">Medical Disclaimer</a>
-              <a href="#" className="text-gray-400 hover:text-mint transition-colors">Sitemap</a>
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">Medical Disclaimer</a>
+              <a href="#" className="text-gray-400 hover:text-mint transition-all duration-200 hover:underline active:text-mint-400">Sitemap</a>
             </div>
           </div>
           

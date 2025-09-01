@@ -116,32 +116,32 @@ function App() {
             <nav className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => handleNavigation('home')}
-                className={`transition-colors ${currentPage === 'home' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                className={`transition-all duration-200 px-3 py-2 rounded-lg ${currentPage === 'home' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'}`}
               >
                 Home
               </button>
               <TreatmentMegaMenu onNavigate={handleNavigation} currentPage={currentPage} />
               <button 
                 onClick={() => handleNavigation('doctors')}
-                className={`transition-colors ${currentPage === 'doctors' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                className={`transition-all duration-200 px-3 py-2 rounded-lg ${currentPage === 'doctors' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'}`}
               >
                 Doctors
               </button>
               <button 
                 onClick={() => handleNavigation('testimonials')}
-                className={`transition-colors ${currentPage === 'testimonials' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                className={`transition-all duration-200 px-3 py-2 rounded-lg ${currentPage === 'testimonials' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'}`}
               >
                 Testimonials
               </button>
               <button 
                 onClick={() => handleNavigation('travel')}
-                className={`transition-colors ${currentPage === 'travel' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                className={`transition-all duration-200 px-3 py-2 rounded-lg ${currentPage === 'travel' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'}`}
               >
                 Travel Guide
               </button>
               <button 
                 onClick={() => handleNavigation('about')}
-                className={`transition-colors ${currentPage === 'about' ? 'text-mint' : 'text-gray-600 hover:text-mint'}`}
+                className={`transition-all duration-200 px-3 py-2 rounded-lg ${currentPage === 'about' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'}`}
               >
                 About
               </button>
@@ -149,14 +149,14 @@ function App() {
 
             {/* Contact Info & Mobile Menu */}
             <div className="flex items-center space-x-4">
-              <a href="tel:+919821274474" className="hidden lg:flex items-center text-mint hover:text-mint-dark transition-colors">
+              <a href="tel:+919821274474" className="hidden lg:flex items-center text-mint hover:text-mint-dark transition-all duration-200 px-3 py-2 rounded-lg hover:bg-mint/5 active:bg-mint/20">
                 <Phone className="h-4 w-4 mr-2" />
                 <span className="font-semibold">+91 98212 74474</span>
               </a>
               
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden text-gray-600 hover:text-mint transition-colors"
+                className="md:hidden text-gray-600 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/5 active:bg-mint/20"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -170,53 +170,53 @@ function App() {
             <div className="px-4 py-2 space-y-1">
               <button 
                 onClick={() => handleNavigation('home')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'home' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'home' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 Home
               </button>
               <button 
                 onClick={() => handleNavigation('treatments')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'treatments' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'treatments' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 Treatments
               </button>
               <button 
                 onClick={() => handleNavigation('doctors')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'doctors' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'doctors' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 Doctors
               </button>
               <button 
                 onClick={() => handleNavigation('testimonials')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'testimonials' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'testimonials' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 Testimonials
               </button>
               <button 
                 onClick={() => handleNavigation('travel')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'travel' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'travel' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 Travel Guide
               </button>
               <button 
                 onClick={() => handleNavigation('about')}
-                className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${
-                  currentPage === 'about' ? 'text-mint bg-mint/5' : 'text-gray-600 hover:text-mint hover:bg-mint/5'
+                className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-200 ${
+                  currentPage === 'about' ? 'text-mint bg-mint/10' : 'text-gray-600 hover:text-mint hover:bg-mint/5 active:bg-mint/20'
                 }`}
               >
                 About
               </button>
-              <a href="tel:+919821274474" className="block w-full text-left px-3 py-2 text-mint font-semibold">
+              <a href="tel:+919821274474" className="block w-full text-left px-3 py-2 text-mint font-semibold hover:bg-mint/5 active:bg-mint/20 rounded-md transition-all duration-200">
                 Call +91 98212 74474
               </a>
             </div>
@@ -246,19 +246,19 @@ function App() {
             <div className="space-y-4">
               <a 
                 href="tel:+919821274474"
-                className="block w-full bg-mint text-white text-center py-3 rounded-xl font-semibold hover:bg-mint-dark transition-colors"
+                className="block w-full bg-mint text-white text-center py-3 rounded-xl font-semibold hover:bg-mint-dark active:bg-mint-800 transition-all duration-200 transform active:scale-95"
               >
                 Call +91 98212 74474
               </a>
               <a 
                 href="https://wa.me/919821274474"
-                className="block w-full bg-green-500 text-white text-center py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors"
+                className="block w-full bg-green-500 text-white text-center py-3 rounded-xl font-semibold hover:bg-green-600 active:bg-green-700 transition-all duration-200 transform active:scale-95"
               >
                 WhatsApp Us
               </a>
               <button 
                 onClick={closeAppointmentModal}
-                className="block w-full border border-gray-300 text-gray-600 text-center py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                className="block w-full border border-gray-300 text-gray-600 text-center py-3 rounded-xl font-semibold hover:bg-gray-50 active:bg-gray-100 transition-all duration-200 transform active:scale-95"
               >
                 Close
               </button>
@@ -311,13 +311,13 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
                   onClick={onBookConsultation}
-                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
+                  className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 active:translate-y-0"
                 >
                   Book Free Consultation 🦷
                 </button>
                 <a 
                   href="tel:+919821274474"
-                  className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 text-center"
+                  className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white active:bg-mint-600 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 active:translate-y-0 text-center"
                 >
                   Call +91 98212 74474
                 </a>
@@ -425,7 +425,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
                   <p className="text-green-600 font-semibold text-sm mb-4">{treatment.savings}</p>
                   <button 
                     onClick={() => onNavigate('treatments')}
-                    className="w-full bg-gradient-to-r from-mint-600 to-mint-500 text-white py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1"
+                    className="w-full bg-gradient-to-r from-mint-600 to-mint-500 text-white py-3 rounded-xl font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-medium hover:shadow-glow transform hover:-translate-y-1 active:translate-y-0"
                   >
                     Learn More
                   </button>
@@ -437,7 +437,7 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
           <div className="text-center mt-12">
             <button 
               onClick={() => onNavigate('treatments')}
-              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 active:translate-y-0"
             >
               View All Treatments
             </button>
@@ -455,13 +455,13 @@ const HomePage = ({ onNavigate, onBookConsultation }: { onNavigate: (page: strin
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={onBookConsultation}
-              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1"
+              className="bg-gradient-to-r from-mint-600 to-mint-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-mint-700 hover:to-mint-600 active:from-mint-800 active:to-mint-700 transition-all duration-300 shadow-large hover:shadow-glow-lg transform hover:-translate-y-1 active:translate-y-0"
             >
               Get Free Consultation
             </button>
             <a 
               href="tel:+919821274474"
-              className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 text-center"
+              className="border-2 border-mint-500 text-mint-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-500 hover:text-white active:bg-mint-600 transition-all duration-300 hover:shadow-medium transform hover:-translate-y-1 active:translate-y-0 text-center"
             >
               Call +91 98212 74474
             </a>
