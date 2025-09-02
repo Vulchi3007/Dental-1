@@ -155,6 +155,17 @@ function App() {
               </a>
               
               <button
+                onClick={() => {
+                  const url = window.location.href;
+                  navigator.clipboard.writeText(url);
+                  alert('Website URL copied to clipboard!');
+                }}
+                className="hidden lg:flex items-center text-mint hover:text-mint-dark transition-all duration-200 px-3 py-2 rounded-lg hover:bg-mint/5 active:bg-mint/20 text-sm font-medium"
+              >
+                📋 Copy Link
+              </button>
+              
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden text-gray-600 hover:text-mint transition-all duration-200 p-2 rounded-lg hover:bg-mint/5 active:bg-mint/20"
               >
