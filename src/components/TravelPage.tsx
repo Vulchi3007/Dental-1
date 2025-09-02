@@ -206,7 +206,7 @@ const TravelPage = () => {
               with an incredible cultural journey in beautiful Mumbai, India.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-600 transition-colors shadow-lg">
+              <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold">
                 Get Your Custom Quote
               </button>
               <a href="tel:+919821274474" className="border-2 border-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint hover:text-white transition-colors text-center">
@@ -464,7 +464,7 @@ const TravelPage = () => {
             culture and hospitality of India. Let us help you plan your perfect dental vacation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-600 transition-colors shadow-lg">
+            <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold">
               Get Your Custom Quote
             </button>
             <a href="tel:+919821274474" className="border-2 border-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint hover:text-white transition-colors text-center">
