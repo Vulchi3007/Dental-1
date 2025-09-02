@@ -162,34 +162,6 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Meet Our Team */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Meet Our Expert Dentists</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {dentists.map((dentist, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img 
-                  src={dentist.image} 
-                  alt={dentist.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{dentist.name}</h3>
-                  <p className="text-mint font-semibold mb-2">{dentist.qualification}</p>
-                  <p className="text-gray-600 mb-2">{dentist.experience} Experience</p>
-                  <p className="text-sm text-gray-600 mb-4">{dentist.specialization}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{dentist.description}</p>
-                  <div className="flex justify-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Certifications & Accreditations */}
         <div className="bg-mint/5 rounded-2xl p-8 mb-20">
           <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Our Quality Standards</h2>
