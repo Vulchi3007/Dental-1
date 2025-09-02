@@ -207,7 +207,9 @@ const TravelPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+919821274474" className="bg-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-dark transition-colors shadow-lg text-center">
-                Get Your Custom Quote
+                <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-dark transition-colors shadow-lg text-center">
+                  Get Your Custom Quote
+                </button>
               </a>
               <a href="tel:+919821274474" className="border-2 border-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint hover:text-white transition-colors text-center">
                 Call +91 98212 74474
@@ -465,7 +467,9 @@ const TravelPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href="tel:+919821274474" className="bg-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-dark transition-colors shadow-lg text-center">
-              Get Your Custom Quote
+              <button className="bg-mint text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint-dark transition-colors shadow-lg text-center">
+                Get Your Custom Quote
+              </button>
             </a>
             <a href="tel:+919821274474" className="border-2 border-mint text-mint px-8 py-4 rounded-xl text-lg font-semibold hover:bg-mint hover:text-white transition-colors text-center">
               Call +91 98212 74474
